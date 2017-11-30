@@ -9,8 +9,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
 
+        //发布开源项目到jitpack
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -23,6 +23,9 @@ allprojects {
         // 个推SDK库的Maven仓库
         maven {
             url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+        }
+        maven{
+            url "https://jitpack.io"
         }
     }
 }
