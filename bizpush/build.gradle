@@ -18,10 +18,10 @@ android {
                 GETUI_APP_KEY   : "2I90eUGtr56t4mTKXeNDxA",
                 GETUI_APP_SECRET: "cGOCCeNEKx932WF90OiEG"
         ]
-
-        ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86_64"
-        }
+        //子模块中配置jni过滤器不起作用，不知道为什么
+//        ndk {
+//            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+//        }
 
         //ARouter需要，凡是用到ARouter的模块都需要添加
         javaCompileOptions {
@@ -41,12 +41,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    packagingOptions {
-        if (project.rootProject.findProject("app")) {
-            exclude 'lib/**/*.so'
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
         }
     }
+//    packagingOptions {
+//        if (project.rootProject.findProject("app")) {
+//            exclude 'lib/**/*.so'
+//        }
+//    }
 }
 
 dependencies {
