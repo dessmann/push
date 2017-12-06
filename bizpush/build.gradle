@@ -18,9 +18,6 @@ android {
                 GETUI_APP_KEY   : "2I90eUGtr56t4mTKXeNDxA",
                 GETUI_APP_SECRET: "cGOCCeNEKx932WF90OiEG"
         ]
-        ndk {
-            abiFilters "armeabi", "armeabi-v7a", "x86_64"
-        }
 
         //ARouter需要，凡是用到ARouter的模块都需要添加
         javaCompileOptions {
