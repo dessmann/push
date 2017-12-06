@@ -18,9 +18,9 @@ android {
                 GETUI_APP_KEY   : "2I90eUGtr56t4mTKXeNDxA",
                 GETUI_APP_SECRET: "cGOCCeNEKx932WF90OiEG"
         ]
-//        ndk {
-//            abiFilters "armeabi", "armeabi-v7a", "x86_64"
-//        }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86_64"
+        }
 
         //ARouter需要，凡是用到ARouter的模块都需要添加
         javaCompileOptions {
@@ -40,16 +40,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
-//    packagingOptions {
-//        if (project.rootProject.findProject("app")) {
-//            exclude 'lib/**/*.so'
-//        }
-//    }
 }
 
 dependencies {
@@ -65,5 +55,5 @@ dependencies {
     compile "com.github.dessmann:arouter:latest.integration"
 
     compile "com.github.dessmann:dsmplatform:latest.integration"
-    compile 'com.getui:sdk:2.10.2.0'
+    compile 'com.getui:sdk:latest.integration'
 }
